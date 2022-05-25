@@ -1,0 +1,51 @@
+.containerLogin,
+.containerNewUser {
+  margin: 20px;
+  padding: 20px;
+  height: fit-content;
+  border: 2px solid darkgray;
+  box-shadow: 5px 5px 38px 5px #ffffffff;
+}
+
+.containerLogin {
+  width: 30vw;
+  background-color: rgb(45, 95, 78);
+}
+
+.containerNewUser {
+  width: 30vw;
+  background-color: indigo;
+}
+
+.headingLogin {
+  color: pink;
+}
+
+.formLogin,
+.formNewUser {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.submitButtonLogin,
+.submitButtonNewUser {
+  background-color: rgb(225, 140, 225);
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px white;
+}
+
+input {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+p {
+  color: white;
+}
+
+.openNewUser {
+  cursor: pointer;
+  color: deeppink;
+}

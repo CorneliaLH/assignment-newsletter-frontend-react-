@@ -1,0 +1,27 @@
+.header {
+  background-color: rgb(115, 151, 127);
+  div {
+    h1 {
+      color: rgb(62, 1, 62);
+      padding-left: 20px;
+      text-shadow: 0px 0px 20px #ffffff;
+    }
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerContainer {
+  background-color: rgb(115, 151, 127);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    color: white;
+  }
+}

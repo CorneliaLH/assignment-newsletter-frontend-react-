@@ -1,0 +1,46 @@
+.containerLogOutButton {
+  width: 100vw;
+  text-align: right;
+}
+
+.containerLogOutButton .logOutButton {
+  background-color: #97c997;
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 10px white;
+          box-shadow: 0px 0px 10px white;
+}
+
+.containerMain h2 {
+  color: #f8dce1;
+  text-shadow: 0px 0px 10px #ffffff;
+}
+
+.containerMain .containerSubscriber,
+.containerMain .containerNoSubscriber {
+  width: 50vh;
+  border: 3px solid darkgray;
+  padding: 20px;
+  -webkit-box-shadow: 5px 5px 38px 5px #ffffffff;
+          box-shadow: 5px 5px 38px 5px #ffffffff;
+}
+
+.containerMain .containerSubscriber button,
+.containerMain .containerNoSubscriber button {
+  background-color: #e18ce1;
+  padding: 5px;
+  border-radius: 5px;
+  color: black;
+  -webkit-box-shadow: 0px 0px 10px white;
+          box-shadow: 0px 0px 10px white;
+}
+
+.spanSubscriber {
+  color: #71d871;
+}
+
+.spanNoSubscriber {
+  color: red;
+}
+/*# sourceMappingURL=main.css.map */

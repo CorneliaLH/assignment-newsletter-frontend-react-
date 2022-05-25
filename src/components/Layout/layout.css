@@ -1,0 +1,43 @@
+.header {
+  background-color: #73977f;
+}
+
+.header div h1 {
+  color: #3e013e;
+  padding-left: 20px;
+  text-shadow: 0px 0px 20px #ffffff;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footerContainer {
+  background-color: #73977f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footerContainer p {
+  color: white;
+}
+/*# sourceMappingURL=layout.css.map */

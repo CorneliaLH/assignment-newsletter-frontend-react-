@@ -1,0 +1,40 @@
+.containerLogOutButton {
+  width: 100vw;
+  text-align: right;
+  .logOutButton {
+    background-color: rgb(151, 201, 151);
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px white;
+  }
+}
+
+.containerMain {
+  h2 {
+    color: rgb(248, 220, 225);
+    text-shadow: 0px 0px 10px #ffffff;
+  }
+
+  .containerSubscriber,
+  .containerNoSubscriber {
+    width: 50vh;
+    border: 3px solid darkgray;
+    padding: 20px;
+    box-shadow: 5px 5px 38px 5px #ffffffff;
+    button {
+      background-color: rgb(225, 140, 225);
+      padding: 5px;
+      border-radius: 5px;
+      color: black;
+      box-shadow: 0px 0px 10px white;
+    }
+  }
+}
+
+.spanSubscriber {
+  color: rgb(113, 216, 113);
+}
+.spanNoSubscriber {
+  color: red;
+}
