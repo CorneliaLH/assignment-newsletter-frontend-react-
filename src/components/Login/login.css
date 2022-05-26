@@ -12,7 +12,7 @@
 
 .containerLogin {
   width: 30vw;
-  background-color: #2d5f4e;
+  background-color: rgba(45, 95, 78, 0.669);
 }
 
 .containerNewUser {
@@ -43,7 +43,7 @@
 
 .submitButtonLogin,
 .submitButtonNewUser {
-  background-color: #e18ce1;
+  background-color: rgba(225, 140, 225, 0.669);
   border-radius: 5px;
   -webkit-box-shadow: 0px 0px 10px white;
           box-shadow: 0px 0px 10px white;

@@ -9,7 +9,7 @@
 
 .containerLogin {
   width: 30vw;
-  background-color: rgb(45, 95, 78);
+  background-color: rgba(45, 95, 78, 0.669);
 }
 
 .containerNewUser {
@@ -31,7 +31,7 @@
 
 .submitButtonLogin,
 .submitButtonNewUser {
-  background-color: rgb(225, 140, 225);
+  background-color: rgba(225, 140, 225, 0.669);
   border-radius: 5px;
   box-shadow: 0px 0px 10px white;
 }

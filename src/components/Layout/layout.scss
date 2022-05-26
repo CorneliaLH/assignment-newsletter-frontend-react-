@@ -1,6 +1,6 @@
 .header {
   height: 10vh;
-  background-color: rgb(115, 151, 127);
+  background-color: rgba(115, 151, 127, 0.57);
   div {
     h1 {
       color: rgb(62, 1, 62);
@@ -16,14 +16,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("../../images/letterBackground.jpg");
-  background-position: center center;
-  background-size: cover;
 }
 
 .footerContainer {
   height: 10vh;
-  background-color: rgb(115, 151, 127);
+  background-color: rgba(115, 151, 127, 0.57);
   display: flex;
   justify-content: center;
   align-items: center;

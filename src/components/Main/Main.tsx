@@ -4,7 +4,7 @@ import { NewsletterService } from "../../services/NewsletterService";
 import "./main.css";
 export function Main() {
   //variabler
-  const [subscriber, setSubscriber] = useState<boolean>(false);
+  const [subscriber, setSubscriber] = useState<boolean>();
   const navigation = useNavigate();
   useEffect(() => {
     if (!localStorage.userId) {
