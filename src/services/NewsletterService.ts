@@ -11,7 +11,7 @@ interface SubscriptionStatus {
 export class NewsletterService {
   async getNewsletterSubscriber(userId: string | null) {
     let response = await axios.post<Newsletter>(
-      "http://localhost:3001/newsletter",
+      "https://assignmentnewsletterbackend.herokuapp.com/newsletter",
       { userId: userId },
 
       { headers: { "Content-Type": "application/json" } }
@@ -20,7 +20,7 @@ export class NewsletterService {
   }
   async changeNewsletterSubscriber(userId: string | null) {
     let response = await axios.post<SubscriptionStatus>(
-      "http://localhost:3001/newsletter/change",
+      "https://assignmentnewsletterbackend.herokuapp.com/newsletter/change",
       { userId: userId },
 
       { headers: { "Content-Type": "application/json" } }

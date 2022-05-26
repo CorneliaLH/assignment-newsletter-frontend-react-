@@ -1,4 +1,5 @@
 .header {
+  height: 10vh;
   background-color: #73977f;
 }
 
@@ -9,6 +10,7 @@
 }
 
 .main {
+  height: 80vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22,9 +24,13 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-image: url("../../images/letterBackground.jpg");
+  background-position: center center;
+  background-size: cover;
 }
 
 .footerContainer {
+  height: 10vh;
   background-color: #73977f;
   display: -webkit-box;
   display: -ms-flexbox;

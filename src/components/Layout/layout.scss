@@ -1,4 +1,5 @@
 .header {
+  height: 10vh;
   background-color: rgb(115, 151, 127);
   div {
     h1 {
@@ -10,13 +11,18 @@
 }
 
 .main {
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url("../../images/letterBackground.jpg");
+  background-position: center center;
+  background-size: cover;
 }
 
 .footerContainer {
+  height: 10vh;
   background-color: rgb(115, 151, 127);
   display: flex;
   justify-content: center;

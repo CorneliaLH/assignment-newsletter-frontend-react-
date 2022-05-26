@@ -6,7 +6,7 @@ import { IUser } from "../models/IUser";
 export class UserService {
   async postLogIn(userInfo: IUser) {
     let response = await axios.post<IResponseLogIn>(
-      "http://localhost:3001/users/login",
+      "https://assignmentnewsletterbackend.herokuapp.com/users/login",
 
       userInfo,
 
@@ -16,7 +16,7 @@ export class UserService {
   }
   async postNewUser(newUserInfo: INewUser) {
     let response = await axios.post(
-      "http://localhost:3001/users/newuser",
+      "https://assignmentnewsletterbackend.herokuapp.com/users/newuser",
 
       newUserInfo,
 
