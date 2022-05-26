@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOMClient from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
@@ -8,9 +8,9 @@ import { Layout } from "./components/Layout/Layout";
 import { Login } from "./components/Login/Login";
 import { Main } from "./components/Main/Main";
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-);
+const container = document.getElementById("root");
+const root = ReactDOMClient.createRoot(container as Element);
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
