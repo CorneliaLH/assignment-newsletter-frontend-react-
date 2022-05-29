@@ -22,6 +22,7 @@
 
 .headingLogin {
   color: pink;
+  font-size: 1.2rem;
 }
 
 .formLogin,
@@ -47,6 +48,7 @@
   border-radius: 5px;
   -webkit-box-shadow: 0px 0px 10px white;
           box-shadow: 0px 0px 10px white;
+  color: white;
 }
 
 input {
@@ -61,5 +63,17 @@ p {
 .openNewUser {
   cursor: pointer;
   color: deeppink;
+}
+
+.subscribeBox {
+  display: inline;
+}
+
+#checkboxNewUser {
+  display: inline;
+}
+
+span {
+  color: red;
 }
 /*# sourceMappingURL=login.css.map */

@@ -1,0 +1,27 @@
+.notFoundCard {
+  background-color: rgba(0, 0, 0, 0.602);
+  width: 50vh;
+  border: 3px solid darkgray;
+  padding: 20px;
+  -webkit-box-shadow: 5px 5px 38px 5px #ffffffff;
+          box-shadow: 5px 5px 38px 5px #ffffffff;
+}
+
+.notFoundCard h2 {
+  color: white;
+}
+
+.notFoundCard h2 span {
+  color: pink;
+  font-size: 3rem;
+}
+
+.notFoundCard button {
+  background-color: rgba(225, 140, 225, 0.669);
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 10px white;
+          box-shadow: 0px 0px 10px white;
+  padding: 10px 15px 10px 15px;
+  color: white;
+}
+/*# sourceMappingURL=notFound.css.map */

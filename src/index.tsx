@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Layout } from "./components/Layout/Layout";
 import { Login } from "./components/Login/Login";
 import { Main } from "./components/Main/Main";
+import { NotFound } from "./components/NotFound/NotFound";
 
 const container = document.getElementById("root");
 const root = ReactDOMClient.createRoot(container as Element);
@@ -18,7 +19,7 @@ root.render(
         <Route path="/" element={<Layout />}>
           <Route index element={<Login />} />
           <Route path="/main" element={<Main />} />
-          {/* <Route path="*" element={<NotFound />}></Route> */}
+          <Route path="*" element={<NotFound />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

@@ -11,7 +11,8 @@
 }
 
 .main {
-  height: 80vh;
+  min-height: 80vh;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -6,24 +6,25 @@ export function Main() {
   //variabler
   const [subscriber, setSubscriber] = useState<boolean>();
   const navigation = useNavigate();
+
+  //om userId finns i ls hämtar prenumerationsstatus från databasen genom service
   useEffect(() => {
     if (!localStorage.userId) {
-      navigation("/");
+      navigation("../");
+
+      return;
+    } else {
+      let user = localStorage.getItem("userId");
+      let service = new NewsletterService();
+      service.getNewsletterSubscriber(user).then((response) => {
+        if (response.newsletter === true) {
+          setSubscriber(true);
+        } else {
+          setSubscriber(false);
+        }
+      });
     }
   }, []);
-
-  //hämtar prenumerationsstatus från databasen genom service
-  useEffect(() => {
-    let user = localStorage.getItem("userId");
-    let service = new NewsletterService();
-    service.getNewsletterSubscriber(user).then((response) => {
-      if (response.newsletter === true) {
-        setSubscriber(true);
-      } else {
-        setSubscriber(false);
-      }
-    });
-  }, [subscriber]);
 
   //ändrar prenumerationsstatus i databasen genom service
   function changeSubscriberStatus() {
@@ -69,7 +70,7 @@ export function Main() {
         ) : (
           <div className="containerNoSubscriber">
             <p>
-              Du prenumerar <span className="spanNoSubscriber">inte </span>på
+              Du prenumererar <span className="spanNoSubscriber">inte </span>på
               vårt nyhetsbrev!
             </p>
             <p>Här kan du påbörja din prenumeration: </p>

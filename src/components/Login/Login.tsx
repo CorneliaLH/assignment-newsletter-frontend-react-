@@ -8,6 +8,13 @@ import { INewUser } from "../../models/INewUser";
 export function Login() {
   //variabler
   const [openNewUserTag, setOpenNewUserTag] = useState<boolean>(false);
+  const [validationUserNameLength, setValidationUserNameLength] =
+    useState(false);
+  const [validationUserNameCharachters, setValidationUserNameCharachters] =
+    useState(false);
+  const [validationPasswordLength, setValidationPasswordLength] =
+    useState(false);
+  const [validationEmail, setValidationEmail] = useState(false);
   const [logInValues, setLogInValues] = useState<IUser>({
     userName: "",
     password: "",
@@ -42,7 +49,6 @@ export function Login() {
   function submitLogIn() {
     let service = new UserService();
     service.postLogIn(logInValues).then((response) => {
-      console.log(response);
       if (response.status === "ok") {
         localStorage.setItem("userId", response.message);
         navigation("/main");
@@ -58,20 +64,40 @@ export function Login() {
 
   //skapa ny användare funktion
   function submitNewUser() {
-    let service = new UserService();
-    service.postNewUser(newUserValues).then((response) => {
-      if (response.status === "ok") {
-        alert("Ny användare är skapad, var vänlig logga in");
-        setOpenNewUserTag(false);
-        return;
-      } else if (response.status === "error-namn finns redan") {
-        alert("Användarnamn finns redan, prova med ett annat");
-        return;
-      } else if (response.status === "error-användarnamn krävs") {
-        alert("Användarnamn och lösenord krävs");
-        return;
-      }
-    });
+    setValidationUserNameLength(false);
+    setValidationUserNameCharachters(false);
+    setValidationPasswordLength(false);
+    setValidationEmail(false);
+    if (newUserValues.userName.length < 3) {
+      setValidationUserNameLength(true);
+      return;
+    } else if (/[`~,.<>;':"/[\]|{}()=_+-]/.test(newUserValues.userName)) {
+      setValidationUserNameCharachters(true);
+      return;
+    } else if (newUserValues.password.length < 3) {
+      setValidationPasswordLength(true);
+      return;
+    } else if (
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(newUserValues.email) === false
+    ) {
+      setValidationEmail(true);
+      return;
+    } else {
+      let service = new UserService();
+      service.postNewUser(newUserValues).then((response) => {
+        if (response.status === "ok") {
+          alert("Ny användare är skapad, var vänlig logga in");
+          setOpenNewUserTag(false);
+          return;
+        } else if (response.status === "error-namn finns redan") {
+          alert("Användarnamn finns redan, prova med ett annat");
+          return;
+        } else if (response.status === "error-användarnamn krävs") {
+          alert("Användarnamn och lösenord krävs");
+          return;
+        }
+      });
+    }
     setNewUserValues({
       userName: "",
       password: "",
@@ -102,7 +128,7 @@ export function Login() {
             onChange={handleInputChangeLogin}
           />
           <input
-            type="text"
+            type="password"
             placeholder="Lösenord "
             id="passwordLogin"
             name="password"
@@ -119,17 +145,31 @@ export function Login() {
           >
             Logga in
           </button>
-          <p>
-            Skapa ny användare &nbsp;
-            <span
-              className="openNewUser"
-              onClick={() => {
-                openNewUser();
-              }}
-            >
-              här
-            </span>
-          </p>
+          {openNewUserTag ? (
+            <p>
+              Stäng skapa ny användare &nbsp;{" "}
+              <span
+                className="openNewUser"
+                onClick={() => {
+                  openNewUser();
+                }}
+              >
+                här
+              </span>
+            </p>
+          ) : (
+            <p>
+              Skapa ny användare &nbsp;
+              <span
+                className="openNewUser"
+                onClick={() => {
+                  openNewUser();
+                }}
+              >
+                här
+              </span>
+            </p>
+          )}
         </form>
       </div>
       {openNewUserTag ? (
@@ -144,14 +184,29 @@ export function Login() {
               value={newUserValues.userName}
               onChange={handleInputChangeNewUser}
             />
+            {validationUserNameLength ? (
+              <span>Måste vara mer än 3 bokstäver</span>
+            ) : (
+              <></>
+            )}
+            {validationUserNameCharachters ? (
+              <span>Får inte innehålla specialtecken</span>
+            ) : (
+              <></>
+            )}
             <input
-              type="text"
+              type="password"
               placeholder="Lösenord "
               id="passwordNewUser"
               name="password"
               value={newUserValues.password}
               onChange={handleInputChangeNewUser}
             />
+            {validationPasswordLength ? (
+              <span>Måste vara mer än 3 tecken</span>
+            ) : (
+              <></>
+            )}
             <input
               type="email"
               placeholder="E-mail"
@@ -160,12 +215,21 @@ export function Login() {
               value={newUserValues.email}
               onChange={handleInputChangeNewUser}
             />
-            <input
-              type="checkbox"
-              id="checkboxNewUser"
-              name="newsletter"
-              onChange={handleInputChangeNewUser}
-            />
+            {validationEmail ? (
+              <span>Måste vara e-mail format (xxxx@xxx.xx)</span>
+            ) : (
+              <></>
+            )}
+            <p className="subscribeBox">
+              Kryssa här om du vill prenumerera på vårt nyhetsbrev:{" "}
+              <input
+                type="checkbox"
+                id="checkboxNewUser"
+                name="newsletter"
+                onChange={handleInputChangeNewUser}
+              />
+            </p>
+
             <button
               type="submit"
               className="submitButtonNewUser"
