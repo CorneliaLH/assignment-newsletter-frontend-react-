@@ -1,22 +1,22 @@
 # assignment-newsletter-frontend-react
 
-Frontend: React
-Backend: NodeJs och Express
-Databas: MongoDb
+Frontend: React<br/>
+Backend: NodeJs och Express<br/>
+Databas: MongoDb<br/>
 
-Länk till frontend: https://stalwart-meringue-de782f.netlify.app/
+Länk till frontend: https://stalwart-meringue-de782f.netlify.app/<br/>
 Länk till backend: https://assignmentnewsletterbackend.herokuapp.com/
 
-Npm-paket:
+Npm-paket:<br/>
 
-npm i react-router-dom
-npm i axios
+npm i react-router-dom<br/>
+npm i axios<br/>
 
-Applikation körs med:
+Applikation körs med:<br/>
 
-npm install
-npm start
+npm install<br/>
+npm start<br/>
 
-Användarnamn som finns i databasen:
-Anv: asdf
-Lösenord: asdf
+Användarnamn som finns i databasen:<br/>
+Anv: seb<br/>
+Lösenord: seb<br/>
